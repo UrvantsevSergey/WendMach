@@ -12,8 +12,8 @@ public class WendingMachine {
     public int size(){
         return products.size();
     }
-    @Override
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Список товаров: \n");
@@ -23,6 +23,9 @@ public class WendingMachine {
         }
         return sb.toString();
     }
+//    public void getListProducts() {
+//        System.out.println(products);
+//    }
     public void addProduct(Product product) {
         products.add(product);
     }
