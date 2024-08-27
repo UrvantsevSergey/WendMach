@@ -1,6 +1,7 @@
 package src.model;
+import java.io.Serializable;
 
-public class Product {
+public class Product implements Serializable{
     private String name;
     private double price;
 

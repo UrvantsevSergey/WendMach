@@ -20,4 +20,13 @@ public class Presenter {
     public void showProducts() {
         mService.showProducts();
     }
+    public void sortByPrice() {
+        mService.sortByPrice();
+    }
+    public void save() {
+        mService.save();
+    }
+    public void load() {
+        mService.load();
+    }
 }

@@ -1,5 +1,6 @@
 package src.presenter;
 import src.model.*;
+import java.io.IOException;
 
 public class Service implements ServiceInterface {
     private WendingMachine machine;
@@ -21,5 +22,24 @@ public class Service implements ServiceInterface {
     public void showProducts() {
         String answer = machine.toString();
         System.out.println(answer);
+    }
+    public void sortByPrice() {
+        machine.sortByPrice();
+    }
+
+    public void save() {
+        try {
+            Writer writer = new Writer(machine);
+            writer.save("products.csv");
+            System.out.println("Список товаров сохранен.");
+        } catch (IOException e) {
+            System.out.println("Ошибка при сохранении списка товаров: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    public void load() {
+        Writer writer = new Writer(machine);
+        writer.load("products.csv");
+        System.out.println("Список товаров загружен.");
     }
 }

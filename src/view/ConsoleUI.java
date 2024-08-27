@@ -22,7 +22,10 @@ public class ConsoleUI implements View {
             System.out.println("1. Добавить бутылку.");
             System.out.println("2. Добавить снэк.");
             System.out.println("3. Показать список товаров.");
-            System.out.println("4. Закончить работу.\n\n");
+            System.out.println("4. Отсортировать по цене.");
+            System.out.println("5. Сохранить.");
+            System.out.println("6. Загрузить.");
+            System.out.println("7. Закончить работу.\n\n");
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
@@ -35,6 +38,16 @@ public class ConsoleUI implements View {
                     presenter.showProducts();
                     break;
                 case "4":
+                    presenter.sortByPrice();
+                    presenter.showProducts();
+                    break;
+                case "5":
+                    presenter.save();
+                    break;
+                case "6":
+                    presenter.load();
+                    break;
+                case "7":
                     work = false;
                     System.out.println("Работа с приложением склад закончена!");
                     break;
@@ -52,7 +65,7 @@ public class ConsoleUI implements View {
         System.out.println("Введите объем бутылки:");
         double volume = scanner.nextDouble();
         presenter.addBottle(name, price, volume);
-        printAnswer("Бутылка добавлена.");
+        printAnswer("Бутылка добавлена.\n\n");
         scanner.nextLine(); // очистка ввода после ввода объема бутылки
     }
     public void addSnack() {
@@ -63,7 +76,7 @@ public class ConsoleUI implements View {
         System.out.println("Введите вес снэка:");
         double weight = scanner.nextDouble();
         presenter.addSneck(name, price, weight);
-        printAnswer("Снэк добавлен.");
+        printAnswer("Снэк добавлен.\n\n");
         scanner.nextLine();
     }
     public void printAnswer(String answer) {

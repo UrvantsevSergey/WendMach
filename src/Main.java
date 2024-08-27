@@ -1,5 +1,4 @@
 package src;
-import src.model.*;
 import src.view.*;
 import src.presenter.*;
 
